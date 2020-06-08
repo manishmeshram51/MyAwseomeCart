@@ -270,7 +270,15 @@
 			<span class="carousel-control-next-icon"></span>
 		</a>
 
-
+		{% if prd %}
+    		<ul>
+    		{% for product in prd %}
+        		<li><a href="/polls/{{ product.id }}/">{{ product.product_name }}</a></li>
+   			{% endfor %}
+    		</ul>
+		{% else %}
+			<p>No polls are availab	le.</p>
+		{% endif %}
 
 
 		<!-- Optional JavaScript -->
