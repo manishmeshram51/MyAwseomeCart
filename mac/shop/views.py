@@ -4,14 +4,14 @@ from .models import Product
 
 
 def index(request):
-    # return HttpResponse("Hello, world. You're at the polls index.")
     prd = Product.objects.all()
     print(prd)
     context = {'prd': prd}
     return render(request,'shop/index.html',context)
 
 def about(request):
-    return HttpResponse("About us")
+    return render(request,'shop/about.html')
+
 
 def contact(request):
     return HttpResponse("contact us")
