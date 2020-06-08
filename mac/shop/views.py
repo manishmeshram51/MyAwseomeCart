@@ -12,13 +12,25 @@ def contact(request):
     return HttpResponse("contact us")
 
 def tracker(request):
-    return HttpResponse("About us")
+    return HttpResponse("tracker")
 
 def search(request):
-    return HttpResponse("About us")
+    return HttpResponse("search")
 
 def prodView(request):
-    return HttpResponse("About us")
+    return HttpResponse("prd view")
 
 def checkout(request):
-    return HttpResponse("About us")
+    return HttpResponse("checkout")
+
+def register(request):
+    return HttpResponse("reg")
+
+def login(request):
+    return HttpResponse("login")
+
+def cart(request):
+    return HttpResponse("cart")
+
+def wishlist(request):
+    return HttpResponse("wishlist")
