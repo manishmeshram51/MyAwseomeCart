@@ -1,13 +1,17 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Product
-
+import math
 
 def index(request):
-    prd = Product.objects.all()
-    print(prd)
-    context = {'prd': prd}
-    return render(request,'shop/index.html',context)
+    products = Product.objects.all()
+    
+    n = len(products)
+
+    nSlides = n//4 + math.ceil((n/4)-(n//4))
+    print(n, nSlides)
+    params = {'no_of_slides':nSlides, 'range': range(1,nSlides),'product': products}
+    return render(request,'shop/index.html',params)
 
 def about(request):
     return render(request,'shop/about.html')
